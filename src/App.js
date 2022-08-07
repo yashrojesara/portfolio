@@ -6,13 +6,13 @@ import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import { Context } from "./Components/context";
 import { tabs } from "./helper";
+import Footer from "./Components/Footer/Footer";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
     height: "100%",
     display: "flex",
-    // justifyContent: "center",
     flexFlow: "wrap",
     background: "#242424",
   },
@@ -40,6 +40,7 @@ function App() {
       <div className={classes.root}>
         <Header />
         {renderContent()}
+        <Footer />
       </div>
     </Context.Provider>
   );
