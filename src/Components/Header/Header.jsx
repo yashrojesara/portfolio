@@ -1,4 +1,7 @@
 import { makeStyles } from "@mui/styles";
+import { useContext } from "react";
+import { name, tabs } from "../../helper";
+import { Context } from "../context";
 
 const useStyles = makeStyles({
   header: {
@@ -13,52 +16,47 @@ const useStyles = makeStyles({
   author: {
     textDecoration: "underline",
     cursor: "pointer",
-    color: "darkturquoise",
+    color: "aquamarine",
     "&:hover": {
       color: "aquamarine",
     },
   },
-  menu: {
-    display: "flex",
-  },
-  home: {
-    cursor: "pointer",
-    color: "darkturquoise",
-    "&:hover": {
-      color: "aquamarine",
-      textDecoration: "underline",
-    },
-  },
-  projects: {
-    cursor: "pointer",
-    color: "darkturquoise",
+  tab: {
     marginLeft: "1em",
-    "&:hover": {
-      color: "aquamarine",
-      textDecoration: "underline",
-    },
-  },
-  blogs: {
     cursor: "pointer",
-    marginLeft: "1em",
     color: "darkturquoise",
     "&:hover": {
       color: "aquamarine",
       textDecoration: "underline",
     },
+  },
+  activeTab: {
+    textDecoration: "underline",
+    color: "aquamarine",
   },
 });
 
 const Header = () => {
   const classes = useStyles();
+  const { activeTab, setActiveTab } = useContext(Context);
 
   return (
     <div className={classes.header}>
-      <div className={classes.author}>Yash Rojesara</div>
-      <div className={classes.menu}>
-        <span className={classes.home}>Home</span>
-        <span className={classes.projects}>Projects</span>
-        <span className={classes.blogs}>Blogs</span>
+      <div className={classes.author}>{name}</div>
+      <div>
+        {tabs.map((tab, index) => {
+          return (
+            <span
+              key={index}
+              className={`${classes.tab} ${
+                activeTab === tab && classes.activeTab
+              }`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </span>
+          );
+        })}
       </div>
     </div>
   );
