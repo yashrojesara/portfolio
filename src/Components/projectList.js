@@ -1,7 +1,7 @@
 export const projectList = [
   {
     id: 1,
-    title: "How well do you know me?",
+    title: "How well do you know me? 🧘‍♂️",
     date: "July-22",
     description: "A CLI tool to check your knowledge about me",
     technology: "NodeJS",
@@ -111,7 +111,7 @@ export const projectList = [
   },
   {
     id: 11,
-    title: "Profit-Loss Calculator 💰",
+    title: "Profit-Loss Calculator 🤑",
     date: "Aug-22",
     description:
       "This App will take input stocks qty & current prices and calculate profit-loss",

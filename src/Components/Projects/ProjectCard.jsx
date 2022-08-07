@@ -47,6 +47,8 @@ const useStyles = makeStyles({
     width: "85%",
     marginTop: "0.5em",
     color: "darkturquoise",
+    textTransform: "capitalize",
+    textAlign: "justify",
   },
   end: {
     display: "flex",
