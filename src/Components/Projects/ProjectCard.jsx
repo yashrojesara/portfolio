@@ -5,7 +5,7 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import makeStyles from "@mui/styles/makeStyles";
 import { Link, Tooltip } from "@mui/material";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   card: {
     boxShadow: "none !important",
     backgroundColor: "#242424 !important",
@@ -21,9 +21,15 @@ const useStyles = makeStyles({
     margin: "1em",
     maxWidth: "320px",
     minWidth: "320px",
-    minHeight: "150px",
+    minHeight: "180px",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     borderRadius: "10px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "1em 0em",
+      padding: "0.75em !important",
+      maxWidth: "300px",
+      minWidth: "300px",
+    },
   },
   header: {
     display: "flex",
@@ -74,7 +80,14 @@ const useStyles = makeStyles({
   iconColor: {
     color: "aquamarine",
   },
-});
+  tooltip: {
+    backgroundColor: "darkturquoise !important",
+    color: "black !important",
+  },
+  customArrow: {
+    color: "darkturquoise !important",
+  },
+}));
 
 const ProjectCard = (props) => {
   const { project } = props;
@@ -92,12 +105,26 @@ const ProjectCard = (props) => {
 
         <div className={classes.end}>
           <div className={classes.button}>
-            <Tooltip title="GitHub Link" arrow>
+            <Tooltip
+              classes={{
+                tooltip: classes.tooltip,
+                arrow: classes.customArrow,
+              }}
+              title="GitHub Link"
+              arrow
+            >
               <Link href={project.githubLink} target="_blank">
                 <GitHubIcon className={classes.iconColor} />
               </Link>
             </Tooltip>
-            <Tooltip title="Live Link" arrow>
+            <Tooltip
+              classes={{
+                tooltip: classes.tooltip,
+                arrow: classes.customArrow,
+              }}
+              title="Live Link"
+              arrow
+            >
               <Link href={project.liveLink} target="_blank">
                 <ExitToAppIcon
                   className={classes.iconColor}
@@ -108,11 +135,9 @@ const ProjectCard = (props) => {
           </div>
           <div className={classes.mark}>
             <span className={classes.border}>{project.mark}</span>
-            <Tooltip title={project.id > 2 ? "ReactJS" : "NodeJS"} arrow>
-              <span className={`${classes.technology} ${classes.border}`}>
-                {project.technology}
-              </span>
-            </Tooltip>
+            <span className={`${classes.technology} ${classes.border}`}>
+              {project.technology}
+            </span>
           </div>
         </div>
       </CardContent>

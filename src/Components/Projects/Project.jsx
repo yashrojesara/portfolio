@@ -2,7 +2,7 @@ import { makeStyles } from "@mui/styles";
 import { projectList } from "../projectList";
 import ProjectCard from "./ProjectCard";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   main: {
     display: "flex",
     fontFamily: "Rubik Mono One",
@@ -15,14 +15,20 @@ const useStyles = makeStyles({
   heading: {
     color: "darkturquoise",
     fontSize: "20px",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   cardWrapper: {
     display: "flex",
     justifyContent: "center",
     flexFlow: "wrap",
     padding: "2em 5em",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0em",
+    },
   },
-});
+}));
 
 const Project = () => {
   const classes = useStyles();

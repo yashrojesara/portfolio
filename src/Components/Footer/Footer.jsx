@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Link } from "@mui/material";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   footer: {
     display: "flex",
     width: "100%",
@@ -15,13 +15,22 @@ const useStyles = makeStyles({
     padding: "2em 6em",
     color: "darkturquoise",
     fontFamily: "rubik mono one",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      padding: "2em 3em",
+    },
   },
   icons: {
     display: "flex",
     marginLeft: "0.5em",
     color: "aquamarine",
   },
-});
+  firstIcon: {
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "0em",
+    },
+  },
+}));
 
 const Footer = () => {
   const classes = useStyles();
@@ -64,7 +73,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener"
             >
-              <account.icon className={classes.icons} />
+              <account.icon
+                className={`${classes.icons} ${
+                  account.id === 0 && classes.firstIcon
+                }`}
+              />
             </Link>
           );
         })}

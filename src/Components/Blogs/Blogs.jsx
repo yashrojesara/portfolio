@@ -2,7 +2,7 @@ import { makeStyles } from "@mui/styles";
 import { blogList } from "../blogList";
 import BlogsCard from "./BlogsCard";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   main: {
     display: "flex",
     fontFamily: "Rubik Mono One",
@@ -15,6 +15,9 @@ const useStyles = makeStyles({
   heading: {
     color: "darkturquoise",
     fontSize: "20px",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   cardWrapper: {
     display: "flex",
@@ -22,8 +25,11 @@ const useStyles = makeStyles({
     flexFlow: "wrap",
     padding: "2em 5em",
     flexDirection: "column",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0em",
+    },
   },
-});
+}));
 
 const Blogs = () => {
   const classes = useStyles();

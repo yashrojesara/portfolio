@@ -8,6 +8,7 @@ import { Context } from "./Components/context";
 import { tabs } from "./helper";
 import Footer from "./Components/Footer/Footer";
 import { ThemeProvider } from "@mui/styles";
+import { createTheme } from "@mui/material";
 
 const useStyles = makeStyles({
   root: {
@@ -24,7 +25,7 @@ function App() {
   const classes = useStyles();
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  const theme = {};
+  const theme = createTheme({});
 
   const renderContent = () => {
     switch (activeTab) {

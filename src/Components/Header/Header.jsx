@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { name, tabs } from "../../helper";
 import { Context } from "../context";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   header: {
     display: "flex",
     width: "100%",
@@ -12,13 +12,21 @@ const useStyles = makeStyles({
     padding: "2em 6em",
     color: "white",
     fontFamily: "rubik mono one",
+    [theme.breakpoints.down("md")]: {
+      padding: "2em 6em",
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: "2em 1em",
+      flexDirection: "column",
+      alignItems: "center",
+    },
   },
   author: {
     textDecoration: "underline",
     cursor: "pointer",
-    color: "aquamarine",
-    "&:hover": {
-      color: "aquamarine",
+    color: "darkturquoise",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
     },
   },
   tab: {
@@ -34,7 +42,7 @@ const useStyles = makeStyles({
     textDecoration: "underline",
     color: "aquamarine",
   },
-});
+}));
 
 const Header = () => {
   const classes = useStyles();

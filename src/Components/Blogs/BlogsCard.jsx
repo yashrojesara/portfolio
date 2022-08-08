@@ -3,7 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import makeStyles from "@mui/styles/makeStyles";
 import { Link } from "@mui/material";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   card: {
     boxShadow: "none !important",
     backgroundColor: "#242424 !important",
@@ -17,11 +17,17 @@ const useStyles = makeStyles({
     color: "white",
     padding: "1.5em !important",
     margin: "1em",
-    maxWidth: "320px",
-    minWidth: "320px",
-    minHeight: "150px",
+    maxWidth: "500px",
+    minWidth: "500px",
+    minHeight: "200px",
     border: "1px solid rgba(255, 255, 255, 0.1)",
     borderRadius: "10px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "1em 0em",
+      padding: "0.75em !important",
+      maxWidth: "300px",
+      minWidth: "300px",
+    },
   },
   header: {
     display: "flex",
@@ -69,7 +75,7 @@ const useStyles = makeStyles({
   viewMore: {
     color: "aquamarine",
   },
-});
+}));
 
 const BlogsCard = (props) => {
   const { blog } = props;
