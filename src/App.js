@@ -16,6 +16,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexFlow: "wrap",
     background: "#242424",
+    overflow: "auto",
   },
 });
 
