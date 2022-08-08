@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Context } from "./Components/context";
 import { tabs } from "./helper";
 import Footer from "./Components/Footer/Footer";
+import { ThemeProvider } from "@mui/styles";
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +22,8 @@ const useStyles = makeStyles({
 function App() {
   const classes = useStyles();
   const [activeTab, setActiveTab] = useState(tabs[0]);
+
+  const theme = {};
 
   const renderContent = () => {
     switch (activeTab) {
@@ -37,11 +40,13 @@ function App() {
 
   return (
     <Context.Provider value={{ activeTab, setActiveTab }}>
-      <div className={classes.root}>
-        <Header />
-        {renderContent()}
-        <Footer />
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className={classes.root}>
+          <Header />
+          {renderContent()}
+          <Footer />
+        </div>
+      </ThemeProvider>
     </Context.Provider>
   );
 }
