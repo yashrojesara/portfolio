@@ -42,7 +42,9 @@ const Header = () => {
 
   return (
     <div className={classes.header}>
-      <div className={classes.author}>{name}</div>
+      <div onClick={() => setActiveTab("Home")} className={classes.author}>
+        {name}
+      </div>
       <div>
         {tabs.map((tab, index) => {
           return (
