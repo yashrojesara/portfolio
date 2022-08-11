@@ -1,10 +1,14 @@
+import { useMediaQuery } from "@mui/material";
+
 function Illustration() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       data-name="Layer 1"
-      width="700"
-      height="500"
+      width={isMobile ? "300" : "700"}
+      height={isMobile ? "300" : "500"}
       viewBox="0 0 829.13137 587.67633"
     >
       <polygon
