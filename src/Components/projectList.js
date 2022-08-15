@@ -29,7 +29,7 @@ export const projectList = [
     description: "An App that will translate your text to banana speak",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/banana-talk",
-    liveLink: "bananatalkmark6.netlify.app",
+    liveLink: "https://bananatalkmark6.netlify.app",
     mark: "mark6",
   },
   {
@@ -40,7 +40,7 @@ export const projectList = [
       "An App that will translate your text to fun speak. User can choose the language they want to translate to",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/translation",
-    liveLink: "",
+    liveLink: "https://fun-translation-mark7.netlify.app/",
     mark: "mark7",
   },
   {
@@ -51,7 +51,7 @@ export const projectList = [
       "This App will display the name of the emoji to the user when user enters any emoji in input field. Also user can click on emoji icons to get the name of it.",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/emoji-dictionary",
-    liveLink: "",
+    liveLink: "https://mark8-emoji-dictionary.netlify.app/",
     mark: "mark8",
   },
   {
@@ -62,7 +62,7 @@ export const projectList = [
       "An App where app user can navigate to different genres to get recommendation of books with its description and ratings.",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/books-app",
-    liveLink: "",
+    liveLink: "https://books-recommender-mark9.netlify.app/",
     mark: "mark9",
   },
   {
@@ -73,7 +73,7 @@ export const projectList = [
       "An App that will take Bill Amount & Cash Given as Input & will return the change that cashier has to give back to the user in minimum number of notes",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/cash-register",
-    liveLink: "",
+    liveLink: "https://cashregistemanager.netlify.app/",
     mark: "mark10",
   },
   {
@@ -84,7 +84,7 @@ export const projectList = [
       "This app will take user's birthdate & lucky number then it will calculate whether user's birthdate is lucky or not",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/lucky-birthdate",
-    liveLink: "",
+    liveLink: "https://lucky-birthdate-mark11.netlify.app/",
     mark: "mark11",
   },
   {
@@ -95,7 +95,7 @@ export const projectList = [
       "An App where user can play quiz about triangles, calculate area of triangle, check if given angles form a triangle or not",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/triangle-quiz",
-    liveLink: "",
+    liveLink: "https://triangle-trivia-mark12.netlify.app/",
     mark: "mark12",
   },
   {
@@ -106,7 +106,7 @@ export const projectList = [
       "An App where user can check if their birthday is a palindrome or not and also gets the nearest palindrome of their birthday",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/birthdate-palindrome",
-    liveLink: "",
+    liveLink: "https://birthday-palindrome-mark13.netlify.app/",
     mark: "mark13",
   },
   {
@@ -117,7 +117,7 @@ export const projectList = [
       "This App will take input stocks qty & current prices and calculate profit-loss",
     technology: "ReactJS",
     githubLink: "https://github.com/yashrojesara/profit-loss",
-    liveLink: "",
+    liveLink: "https://mark14-profit-loss.netlify.app/",
     mark: "mark14",
   },
 ];
