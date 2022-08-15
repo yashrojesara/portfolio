@@ -1,7 +1,7 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import makeStyles from "@mui/styles/makeStyles";
-import { Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -74,12 +74,15 @@ const useStyles = makeStyles((theme) => ({
   },
   viewMore: {
     color: "aquamarine",
+    cursor: "pointer",
+    textDecoration: "underline",
   },
 }));
 
 const BlogsCard = (props) => {
   const { blog } = props;
   const classes = useStyles();
+  const navigate = useNavigate();
 
   return (
     <Card className={classes.card}>
@@ -93,9 +96,14 @@ const BlogsCard = (props) => {
 
         <div className={classes.end}>
           <div className={classes.button}>
-            <Link href={blog.liveLink} target="_blank">
-              <span className={classes.viewMore}>View More</span>
-            </Link>
+            <span
+              onClick={() => {
+                navigate(`/blog/${blog.id}`);
+              }}
+              className={classes.viewMore}
+            >
+              View More
+            </span>
           </div>
           <div className={classes.mark}>
             <span className={classes.border}>{blog.mark}</span>

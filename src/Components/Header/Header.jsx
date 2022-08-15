@@ -1,5 +1,6 @@
 import { makeStyles } from "@mui/styles";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { name, tabs } from "../../helper";
 import { Context } from "../context";
 
@@ -47,10 +48,16 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   const { activeTab, setActiveTab } = useContext(Context);
+  const navigate = useNavigate();
+
+  const onClick = (activeTab) => {
+    setActiveTab(activeTab);
+    navigate("/");
+  };
 
   return (
     <div className={classes.header}>
-      <div onClick={() => setActiveTab("Home")} className={classes.author}>
+      <div onClick={() => onClick("Home")} className={classes.author}>
         {name}
       </div>
       <div>
@@ -61,7 +68,7 @@ const Header = () => {
               className={`${classes.tab} ${
                 activeTab === tab && classes.activeTab
               }`}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => onClick(tab)}
             >
               {tab}
             </span>
